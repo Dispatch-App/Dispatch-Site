@@ -7,9 +7,9 @@ angular.module('dispatch', ['ngMap'])
                     url: 'https://dispatch-danielchristopher1.c9.io/getCrimes',
                     method: "GET",
                     params: {
-                        longitude: 23,
-                        latitude: 24,
-                        range: 10
+                        longitude: 37,
+                        latitude: 37,
+                        range: 6000
                     }
             });
         }
@@ -19,8 +19,8 @@ angular.module('dispatch', ['ngMap'])
 .controller('crimeController', ['$scope', 'crimes', function($scope, $crimes) {
 
     $scope.$on('mapInitialized', function(event, map) {
-        $crimes.get().then(function(data) {
-            console.log(data);
+        $crimes.get().then(function(response) {
+            $scope.crimes = response.data.crimes;
         });
     });
 }]);

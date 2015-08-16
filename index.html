@@ -13,13 +13,23 @@
 
     <body>
         <div id="wrapper" ng-controller="crimeController">
-            <div id="crimes" ng-repeat="crime in crimes">
+            <div id="crimes">
+                <div ng-repeat="crime in crimes">
 
+                </div>
             </div>
             <div id="map">
 
                 <div map-lazy-load="http://maps.google.com/maps/api/js">
-                  <map center="41,-87" zoom="3"></map>
+                    <map center="40.76, -74.16" zoom="8">
+
+                        <marker ng-repeat="crime in crimes"
+                            position="{{ crime.location.latitude }}, {{ crime.location.longitude }}"
+                            animation="Animation.BOUNCE"
+                            draggable="true"
+                            visible="true"></marker>
+
+                    </map>
                 </div>
 
             </div>

@@ -11,7 +11,7 @@ angular.module('dispatch', ['ngMap'])
                         latitude: 24,
                         range: 10
                     }
-                 });
+            });
         }
     };
 })

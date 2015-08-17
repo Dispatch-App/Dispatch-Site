@@ -5,6 +5,10 @@ html, body {
     background: #212121;
 }
 
+span {
+    color: white;
+}
+
 #crimes {
     height: 100%;
     width: 20%;

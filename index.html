@@ -15,7 +15,17 @@
         <div id="wrapper" ng-controller="crimeController">
             <div id="crimes">
                 <div ng-repeat="crime in crimes">
-
+                    <span ng-bind="crime.type"></span>
+                    <br>
+                    <span ng-bind="crime.location.latitude"></span>
+                    <br>
+                    <span ng-bind="crime.location.longitude"></span>
+                    <br>
+                    <span ng-bind="crime.createdAt | date: MM/dd/yyyy"></span>
+                    <br>
+                    <span> {{crime.createdAt |date: "h:mma"}}</span>
+                    <br>
+                    <br>
                 </div>
             </div>
             <div id="map">
